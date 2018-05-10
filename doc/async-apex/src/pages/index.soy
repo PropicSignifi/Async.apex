@@ -1,0 +1,128 @@
+---
+title: "Home"
+description: "Async.apex is a promise-like library to handle asynchronous Apex code neatly."
+---
+
+{namespace pageIndex}
+
+/**
+ */
+{template .render}
+	{@param site: ?}
+
+	{call main.render data="all"}
+		{param content kind="html"}
+			{call .header data="all" /}
+			{call .why /}
+			{call .features /}
+			{call .how /}
+			{call .highlights /}
+			{call Footer.render data="all" /}
+		{/param}
+	{/call}
+{/template}
+
+/**
+ */
+{template .header}
+	{@param site: ?}
+
+	<header class="header">
+		<div class="container">
+			<h1 class="header-title">{$site.title}</h1>
+			<h2 class="header-subtitle">{$site.index.description}</h2>
+			<div class="header-cta">
+				<a href="/async-apex/tutorials/getting_started/step_1.html" class="btn btn-accent">Get Started</a>
+			</div>
+		</div>
+	</header>
+{/template}
+
+/**
+ */
+{template .why}
+	<article class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-2">
+					<h3 class="about-title">Why Async.apex?</h3>
+					<p class="about-description">Async.apex allows a better way to manage synchronous code and asynchronous code in Apex. With Async.apex, you can shift code between synchronous and asynchronous in a promise chain, without losing readability.</p>
+				</div>
+			</div>
+		</div>
+	</article>
+{/template}
+
+/**
+ */
+{template .features}
+	<div class="features">
+		<div class="container">
+			<div class="row">
+				<section class="feature col-md-4 col-md-offset-2">
+					<h3 class="feature-title">Code Chaining</h3>
+					<p class="feature-description">Async.apex chains sync/async codes together, hiding implementation details.</p>
+				</section>
+				<section class="feature col-md-4">
+					<h3 class="feature-title">Functional Style</h3>
+					<p class="feature-description">Async.apex adopts functional style programming, and integrates well with <a href="https://github.com/Click-to-Cloud/R.apex/">R.apex</a></p>
+				</section>
+				<section class="feature col-md-4">
+					<h3 class="feature-title">Lazy Execution</h3>
+					<p class="feature-description">Async.apex creates lazy promises, which start execution only when triggered.</p>
+				</section>
+			</div>
+		</div>
+	</div>
+{/template}
+
+/**
+ */
+{template .how}
+	<article class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-2">
+					<h3 class="about-title">Simple API</h3>
+					<p class="about-description">Async.apex has fairly simple APIs and you can easily get started with it.</p>
+				</div>
+			</div>
+		</div>
+	</article>
+{/template}
+
+/**
+ */
+{template .highlights}
+	<div class="highlights">
+		<div class="container">
+			<section class="highlight row">
+				<div class="col-md-6 col-md-offset-2">
+					<h4 class="highlight-title">Fluent API</h4>
+					<p class="highlight-description">Async.apex has a fluent API that provides most of the Promise features.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					<img class="highlight-image" src="/async-apex/images/highlight_1.png" alt="Fluent API" height="200">
+				</div>
+			</section>
+			<section class="highlight row">
+				<div class="col-md-6 col-md-push-9">
+					<h4 class="highlight-title">Functional Style</h4>
+					<p class="highlight-description">Async.apex can be used seamlessly with <a href="https://github.com/Click-to-Cloud/R.apex/">R.apex<a> in a functional style.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-2 col-md-pull-6">
+					<img class="highlight-image" src="/async-apex/images/highlight_2.png" alt="Collection Support" height="200">
+				</div>
+			</section>
+			<section class="highlight row">
+				<div class="col-md-6 col-md-offset-2">
+					<h4 class="highlight-title">Error Recovery</h4>
+					<p class="highlight-description">Async.apex support easy error recovery by returning a new Async.</p>
+				</div>
+				<div class="col-md-5 col-md-offset-1">
+					<img class="highlight-image" src="/async-apex/images/highlight_3.png" alt="Function Composition" height="200">
+				</div>
+			</section>
+		</div>
+	</div>
+{/template}
