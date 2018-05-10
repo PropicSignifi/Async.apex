@@ -112,7 +112,7 @@ Funcs in then/error/done are executed synchronously. Only Async.Executor instanc
 
 ```java
 promise.then(new SyncCodeFunc()) // sync code
-    .then(new Async(new AsyncCodeFunc())) // async code
+    .then(new ReturnAsyncFunc()) // async code executed in the returning Async
     .fork();
 ```
 
